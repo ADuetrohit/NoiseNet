@@ -1,0 +1,26 @@
+Esp32 dev module 
+INMP441 (I²S Digital Microphone)
+jumper Wires
+USB to micro USB
+
+IoT-Based Noise Monitoring System using ESP32 and INMP441:
+
+This project uses an ESP32 microcontroller and an INMP441 I²S digital microphone to measure environmental noise levels in real time. The ESP32 processes microphone data, estimates noise intensity, and hosts a web server that can be accessed from any smartphone or computer on the same Wi-Fi network. Users can view live noise readings and environment status (Quiet, Moderate, Loud) directly in their browser, making it useful for applications in classrooms, smart homes, industries, and urban noise monitoring.
+
+ Pin Configuration
+
+INMP441 Pin  |	ESP32 GPIO (from code)  |      Function
+VCC	     |    3.3V	                |     Power supply
+GND	     |     GND	                |     Ground
+WS (LRCL)    |	GPIO25	                |  Word Select (Left/Right clock)
+SD (DOUT)    |	GPIO32                  |   Serial Data output
+SCK (BCLK)   |	GPIO26                  |     Bit Clock
+L/R          |   GND = Left channel   	|    Channel select
+
+
+Important Notes:
+
+INMP441 works only at 3.3V logic (don’t connect to 5V).
+If you want the microphone to act as Left channel, connect L/R → GND.
+If you want Right channel, connect L/R → 3.3V.
+
